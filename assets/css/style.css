@@ -26,22 +26,24 @@ hr {
 p {
     padding: 16px;
 }
+/* class to set display:flex */
 .d-f {
     display: -webkit-flex;
     display: -ms-flex;
     display: flex;
 }
-
 header {
     position: relative;
     height: 120px;
     background-color: #fff;
     border-bottom: 5px solid #eee;
 }
+/* content wrapper for header elements */
 .header-wrapper {
     width: 960px;
     margin: 0 auto;
 }
+/* brand div - for my name in header */
 .brand {
     background-color: #4aaaa5;
     display: inline-flex;
@@ -49,7 +51,9 @@ header {
     float: left;
     position: absolute;
     bottom: 0;
+
 }
+/* my name */
 #brand-name {
     color: #fff;
 }
@@ -59,10 +63,12 @@ nav {
     height: 100%;
     float: right;
 }
+/* for li tags in nav */
 .nav-link {
     display: inline-block;
     padding: 10px 16px;
 }
+/* for a tags in nav */
 .nav-link a {
     color: #888;
     text-decoration: none;
@@ -70,6 +76,7 @@ nav {
 .nav-link a:hover {
     color: #333;
 }
+/* wrapper for all content in body (not header, not footer) */
 .content {
     width: 960px;
     margin: 48px auto;
@@ -78,17 +85,20 @@ nav {
 .content h1, h2 {
     color: #4aaaa5;
 }
+/* first content section (about me, portfolio, contact form) */
 .main-section {
     background-color: #fff;
-    float: left;
+    /*float: left;*/
     width: 650px;
     padding: 16px;
     margin-right: 16px;
     border: 3px solid #4aaaa5;
 }
+/* heading in main content section */
 .main-heading {
     padding: 8px;
 }
+/* image of me on about page */
 #profile-pic {
     display: block;
     width: 30%;
@@ -96,9 +106,11 @@ nav {
     border-radius: 50%;
     border: 3px solid #4aaaa5;
 }
+/* div that wraps 2 p tags */
 .about-me-text {
     flex-direction: row;
 }
+/* container for all projects */
 .project-container {
     display: -webkit-flex;
     display: -ms-flex;
@@ -106,16 +118,19 @@ nav {
     flex-wrap: wrap;
     justify-content: center;
 }
+/* container for contents of each individual project */
 .project {
     width: 46%;
     margin: 8px;
     box-shadow: 3px 3px 8px #888888;
     position: relative;
 }
+/* project's image */
 .project-img {
     display: block;
     width: 100%;
 }
+/*project's caption bg element*/
 .project-caption {
     position: absolute;
     bottom: 10px;
@@ -123,6 +138,7 @@ nav {
     background-color: #4aaaa5;
     padding: 16px 0px;
 }
+/*project's caption*/
 .project-caption h2 {
     color: #fff;
     text-align: center;
@@ -154,6 +170,7 @@ nav {
     padding: 8px;
     text-align: center;
 }
+/*container for social icons*/
 .social-icons {
     align-items: center;
     justify-content: center;
@@ -173,4 +190,110 @@ footer {
     justify-content: center;
     align-items: center;
     color: #fff;
+}
+
+/*medium displays*/
+@media screen and (max-width: 980px) {
+    header {
+        height: 90px;
+    }
+    .header-wrapper {
+        width: 768px;
+    }
+    .brand {
+        justify-content: center;
+        align-items: center;
+        padding: 0px 24px;
+        float: left;
+        position: static;
+        height: 100%;
+    }
+    /*shrink content width*/
+    .content {
+        width: 768px;
+    }
+    /* change direction from row to column */
+    .about-me-text {
+        flex-direction: column;
+    }
+    /*increase profile pic size*/
+    #profile-pic {
+        width: 50%;
+    }
+    /****** PORTFOLIO PAGE ******/
+    .project-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .project {
+        width: 100%;
+        margin: 10px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        background-size: 40%;
+    }
+    .content {
+        width: 95%;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+    .main-section {
+        width: 90%;
+        /*padding: 0px;*/
+        margin: 0 auto;
+    }
+    .connect-with-me {
+        background-color: #fff;
+        width: 90%;
+        margin: 10px auto;
+        max-height: 200px;
+        border: 3px solid #4aaaa5;
+    }
+    .social-icons {
+        justify-content: space-between;
+    }
+    .social-icon {
+        width: 70%;
+    }
+
+    /****** PORTFOLIO PAGE ******/
+    .project-container {
+        flex-flow: row wrap;
+        align-items: center;
+    }
+    .project {
+        width: 45%;
+        margin: 10px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    header {
+        height: 180px;
+    }
+    .brand {
+        width: 100%;
+        height: 70%;
+        padding: 0px;
+    }
+    nav {
+        display: flex;
+        width: 100%;
+        height: 30%;
+        float: none;
+        justify-content: center;
+    }
+    /****** PORTFOLIO PAGE ******/
+    .project-container {
+        flex-flow: column wrap;
+        align-items: center;
+    }
+    .project {
+        width: 100%;
+        margin: 10px;
+    }
 }

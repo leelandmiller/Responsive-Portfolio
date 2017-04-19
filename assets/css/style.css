@@ -146,9 +146,11 @@ nav {
 .form-label {
     color: #777777;
 }
+
 .contact-form input, .contact-form textarea {
-    margin: 8px 0px;
-    padding: 8px 0px;
+    width: 98%;
+    padding: 10px 0px 10px 5px;
+    margin: 10px 0px;
 }
 .submit-btn {
     background-color: #4aaaa5;
